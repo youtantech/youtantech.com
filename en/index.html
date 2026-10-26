@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#070a18">
+<title>Youtan Technology · Offline photo gallery and device-to-device transfer</title>
+<meta name="description" content="Youtan Technology · Offline photo gallery and device-to-device transfer">
+<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../img/favicon-192.png">
+<link rel="apple-touch-icon" href="../img/favicon-180.png">
+<style>
+:root { --bg: #070a18; --fg: #eef0ff; --soft: #a6add4; --line: rgba(255,255,255,.12); --glass: rgba(255,255,255,.055);
+        --c1: #6d5bff; --c2: #1fd1ff; --c3: #ff4fd8; --c4: #6cf7b8; }
+* { box-sizing: border-box; }
+html { background: var(--bg); }
+body { margin: 0; min-height: 100vh; color: var(--fg); background: var(--bg); overflow-x: hidden;
+       font: 16px/1.75 -apple-system, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif; }
+.aurora { position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
+.aurora i { position: absolute; border-radius: 50%; filter: blur(80px); opacity: .5; will-change: transform; }
+.aurora i:nth-child(1) { width: 64vmax; height: 64vmax; left: -22vmax; top: -24vmax; background: radial-gradient(circle at 40% 40%, var(--c1), transparent 62%); animation: drift1 26s ease-in-out infinite alternate; }
+.aurora i:nth-child(2) { width: 56vmax; height: 56vmax; right: -20vmax; top: -10vmax; background: radial-gradient(circle at 50% 50%, var(--c2), transparent 62%); animation: drift2 31s ease-in-out infinite alternate; }
+.aurora i:nth-child(3) { width: 58vmax; height: 58vmax; left: 10vmax; bottom: -30vmax; background: radial-gradient(circle at 50% 50%, var(--c3), transparent 62%); animation: drift3 37s ease-in-out infinite alternate; opacity: .38; }
+.aurora i:nth-child(4) { width: 40vmax; height: 40vmax; right: 5vmax; bottom: -8vmax; background: radial-gradient(circle at 50% 50%, var(--c4), transparent 62%); animation: drift1 44s ease-in-out infinite alternate-reverse; opacity: .3; }
+@keyframes drift1 { to { transform: translate3d(10vmax, 8vmax, 0) scale(1.15); } }
+@keyframes drift2 { to { transform: translate3d(-9vmax, 10vmax, 0) scale(1.1); } }
+@keyframes drift3 { to { transform: translate3d(12vmax, -8vmax, 0) scale(1.2); } }
+@media (prefers-reduced-motion: reduce) { .aurora i { animation: none; } }
+nav { position: sticky; top: 0; z-index: 2; background: rgba(7,10,24,.55); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--line); }
+nav div { max-width: 900px; margin: 0 auto; padding: 14px 20px; display: flex; gap: 18px; flex-wrap: wrap; align-items: baseline; }
+nav b { margin-right: auto; font-size: 17px; letter-spacing: .02em; }
+nav a { color: var(--soft); text-decoration: none; }
+nav a:hover { color: var(--fg); }
+main { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; padding: 40px 20px 72px; }
+h1 { font-size: 34px; line-height: 1.25; margin: 0 0 8px; letter-spacing: -.01em;
+     background: linear-gradient(95deg, #ffffff 0%, #c7d2ff 45%, #8ef0ff 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 20px; margin: 40px 0 12px; display: flex; align-items: center; gap: 12px; }
+h2::before { content: ""; width: 22px; height: 3px; border-radius: 2px; background: linear-gradient(90deg, var(--c2), var(--c3)); box-shadow: 0 0 12px var(--c2); }
+h3 { font-size: 17px; margin: 0 0 4px; }
+p { margin: 8px 0; }
+.sub { color: var(--soft); margin: 0 0 24px; font-size: 17px; }
+.item { padding-left: 1.2em; }
+a { color: #8fc4ff; }
+ul { padding-left: 1.2em; }
+li { margin: 4px 0; }
+li b { color: #fff; }
+.glow { height: 1px; margin: 28px 0; background: linear-gradient(90deg, transparent, var(--c2) 30%, var(--c3) 70%, transparent); box-shadow: 0 0 14px rgba(31,209,255,.6); opacity: .8; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 16px; margin: 16px 0; }
+.card { position: relative; background: var(--glass); border: 1px solid var(--line); border-radius: 20px; padding: 20px; display: flex; gap: 16px; align-items: flex-start;
+        backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); box-shadow: 0 24px 60px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.08);
+        text-decoration: none; color: inherit; transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease; }
+.card:hover { transform: translateY(-3px); border-color: rgba(31,209,255,.55); box-shadow: 0 24px 60px rgba(0,0,0,.4), 0 0 28px rgba(31,209,255,.25), inset 0 1px 0 rgba(255,255,255,.1); }
+.card img { width: 60px; height: 60px; border-radius: 14px; flex: none; box-shadow: 0 8px 24px rgba(0,0,0,.4); }
+.card p { margin: 4px 0 0; color: var(--soft); font-size: 15px; }
+.hero { display: flex; gap: 22px; align-items: center; margin: 8px 0 24px; flex-wrap: wrap; }
+.hero img { width: 104px; height: 104px; border-radius: 24px; box-shadow: 0 16px 40px rgba(0,0,0,.45), 0 0 40px rgba(109,91,255,.35); }
+.panel { background: var(--glass); border: 1px solid var(--line); border-radius: 20px; padding: 20px 22px; backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); box-shadow: 0 24px 60px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.08); }
+.facts { display: grid; grid-template-columns: max-content 1fr; gap: 8px 20px; margin: 0; }
+.facts div:nth-child(odd) { color: var(--soft); }
+.note { background: linear-gradient(135deg, rgba(109,91,255,.18), rgba(31,209,255,.12)); border: 1px solid rgba(143,196,255,.35); border-radius: 14px; padding: 12px 16px; font-size: 15px; }
+.btn { display: inline-block; padding: 10px 20px; border-radius: 999px; color: #fff; text-decoration: none; font-weight: 600;
+       background: linear-gradient(95deg, var(--c1), var(--c2)); box-shadow: 0 10px 30px rgba(109,91,255,.45), 0 0 18px rgba(31,209,255,.35); }
+footer { color: var(--soft); border-top: 1px solid var(--line); margin-top: 56px; padding-top: 18px; font-size: 14px; }
+@media (max-width: 480px) { h1 { font-size: 28px; } .facts { grid-template-columns: 1fr; gap: 2px 0; } .facts div:nth-child(even) { margin-bottom: 8px; } }
+</style>
+</head>
+<body>
+<div class="aurora" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+<nav><div><b>Youtan Technology</b><a href="index.html">Home</a><a href="gallery.html">Xiyne Gallery</a><a href="shanchuan.html">Shanchuan</a><a href="privacy.html">Privacy</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="../index.html">中文</a></div></nav>
+<main>
+
+<h1>Your photos and files stay on your own phone.</h1>
+<p class="sub">Kunming Youtan Technology Co., Ltd. builds apps that stay offline: the AI runs on the phone itself, with no internet permission, no account, no ads and no tracking.</p>
+<div class="glow"></div>
+<h2>Products</h2>
+<div class="cards">
+<a class="card" href="gallery.html"><img src="../img/xiyne-gallery.png" alt=""><div><h3>Xiyne Gallery</h3><p>One sentence brings the moment back; an AES-256 private album; automatic organising, clean-up and editing; fully offline. Android.</p></div></a>
+<a class="card" href="shanchuan.html"><img src="../img/shanchuan.png" alt=""><div><h3>Shanchuan (闪传)</h3><p>Photos, videos and files straight from one phone to another over Wi-Fi Direct: no mobile data, no server. Android, coming soon.</p></div></a>
+</div>
+<h2>Contact</h2>
+<div class="panel"><div class="facts">
+<div>Support</div><div><a href="mailto:support@youtantech.com">support@youtantech.com</a></div>
+<div>Privacy</div><div><a href="mailto:privacy@youtantech.com">privacy@youtantech.com</a></div>
+</div></div>
+<p style="margin-top:20px"><a class="btn" href="about.html">About us</a></p>
+
+<footer>© 2026 Kunming Youtan Technology Co., Ltd. · <a href="mailto:support@youtantech.com">support@youtantech.com</a><br>This site collects no personal data and sets no cookies.</footer>
+</main>
+</body>
+</html>
