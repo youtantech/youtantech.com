@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#070a18">
+<title>Xiyne Gallery · Privacy policy (China edition)</title>
+<meta name="description" content="Xiyne Gallery · Privacy policy (China edition)">
+<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../img/favicon-192.png">
+<link rel="apple-touch-icon" href="../img/favicon-180.png">
+<style>
+:root { --bg: #070a18; --fg: #eef0ff; --soft: #a6add4; --line: rgba(255,255,255,.12); --glass: rgba(255,255,255,.055);
+        --c1: #6d5bff; --c2: #1fd1ff; --c3: #ff4fd8; --c4: #6cf7b8; }
+* { box-sizing: border-box; }
+html { background: var(--bg); }
+body { margin: 0; min-height: 100vh; color: var(--fg); background: var(--bg); overflow-x: hidden;
+       font: 16px/1.75 -apple-system, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif; }
+.aurora { position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
+.aurora i { position: absolute; border-radius: 50%; filter: blur(80px); opacity: .5; will-change: transform; }
+.aurora i:nth-child(1) { width: 64vmax; height: 64vmax; left: -22vmax; top: -24vmax; background: radial-gradient(circle at 40% 40%, var(--c1), transparent 62%); animation: drift1 26s ease-in-out infinite alternate; }
+.aurora i:nth-child(2) { width: 56vmax; height: 56vmax; right: -20vmax; top: -10vmax; background: radial-gradient(circle at 50% 50%, var(--c2), transparent 62%); animation: drift2 31s ease-in-out infinite alternate; }
+.aurora i:nth-child(3) { width: 58vmax; height: 58vmax; left: 10vmax; bottom: -30vmax; background: radial-gradient(circle at 50% 50%, var(--c3), transparent 62%); animation: drift3 37s ease-in-out infinite alternate; opacity: .38; }
+.aurora i:nth-child(4) { width: 40vmax; height: 40vmax; right: 5vmax; bottom: -8vmax; background: radial-gradient(circle at 50% 50%, var(--c4), transparent 62%); animation: drift1 44s ease-in-out infinite alternate-reverse; opacity: .3; }
+@keyframes drift1 { to { transform: translate3d(10vmax, 8vmax, 0) scale(1.15); } }
+@keyframes drift2 { to { transform: translate3d(-9vmax, 10vmax, 0) scale(1.1); } }
+@keyframes drift3 { to { transform: translate3d(12vmax, -8vmax, 0) scale(1.2); } }
+@media (prefers-reduced-motion: reduce) { .aurora i { animation: none; } }
+nav { position: sticky; top: 0; z-index: 2; background: rgba(7,10,24,.55); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--line); }
+nav div { max-width: 900px; margin: 0 auto; padding: 14px 20px; display: flex; gap: 18px; flex-wrap: wrap; align-items: baseline; }
+nav b { margin-right: auto; font-size: 17px; letter-spacing: .02em; }
+nav a { color: var(--soft); text-decoration: none; }
+nav a:hover { color: var(--fg); }
+main { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; padding: 40px 20px 72px; }
+h1 { font-size: 34px; line-height: 1.25; margin: 0 0 8px; letter-spacing: -.01em;
+     background: linear-gradient(95deg, #ffffff 0%, #c7d2ff 45%, #8ef0ff 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { font-size: 20px; margin: 40px 0 12px; display: flex; align-items: center; gap: 12px; }
+h2::before { content: ""; width: 22px; height: 3px; border-radius: 2px; background: linear-gradient(90deg, var(--c2), var(--c3)); box-shadow: 0 0 12px var(--c2); }
+h3 { font-size: 17px; margin: 0 0 4px; }
+p { margin: 8px 0; }
+.sub { color: var(--soft); margin: 0 0 24px; font-size: 17px; }
+.item { padding-left: 1.2em; }
+a { color: #8fc4ff; }
+ul { padding-left: 1.2em; }
+li { margin: 4px 0; }
+li b { color: #fff; }
+.glow { height: 1px; margin: 28px 0; background: linear-gradient(90deg, transparent, var(--c2) 30%, var(--c3) 70%, transparent); box-shadow: 0 0 14px rgba(31,209,255,.6); opacity: .8; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 16px; margin: 16px 0; }
+.card { position: relative; background: var(--glass); border: 1px solid var(--line); border-radius: 20px; padding: 20px; display: flex; gap: 16px; align-items: flex-start;
+        backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); box-shadow: 0 24px 60px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.08);
+        text-decoration: none; color: inherit; transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease; }
+.card:hover { transform: translateY(-3px); border-color: rgba(31,209,255,.55); box-shadow: 0 24px 60px rgba(0,0,0,.4), 0 0 28px rgba(31,209,255,.25), inset 0 1px 0 rgba(255,255,255,.1); }
+.card img { width: 60px; height: 60px; border-radius: 14px; flex: none; box-shadow: 0 8px 24px rgba(0,0,0,.4); }
+.card p { margin: 4px 0 0; color: var(--soft); font-size: 15px; }
+.hero { display: flex; gap: 22px; align-items: center; margin: 8px 0 24px; flex-wrap: wrap; }
+.hero img { width: 104px; height: 104px; border-radius: 24px; box-shadow: 0 16px 40px rgba(0,0,0,.45), 0 0 40px rgba(109,91,255,.35); }
+.panel { background: var(--glass); border: 1px solid var(--line); border-radius: 20px; padding: 20px 22px; backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); box-shadow: 0 24px 60px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.08); }
+.facts { display: grid; grid-template-columns: max-content 1fr; gap: 8px 20px; margin: 0; }
+.facts div:nth-child(odd) { color: var(--soft); }
+.note { background: linear-gradient(135deg, rgba(109,91,255,.18), rgba(31,209,255,.12)); border: 1px solid rgba(143,196,255,.35); border-radius: 14px; padding: 12px 16px; font-size: 15px; }
+.btn { display: inline-block; padding: 10px 20px; border-radius: 999px; color: #fff; text-decoration: none; font-weight: 600;
+       background: linear-gradient(95deg, var(--c1), var(--c2)); box-shadow: 0 10px 30px rgba(109,91,255,.45), 0 0 18px rgba(31,209,255,.35); }
+footer { color: var(--soft); border-top: 1px solid var(--line); margin-top: 56px; padding-top: 18px; font-size: 14px; }
+@media (max-width: 480px) { h1 { font-size: 28px; } .facts { grid-template-columns: 1fr; gap: 2px 0; } .facts div:nth-child(even) { margin-bottom: 8px; } }
+</style>
+</head>
+<body>
+<div class="aurora" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+<nav><div><b>Youtan Technology</b><a href="index.html">Home</a><a href="gallery.html">Xiyne Gallery</a><a href="shanchuan.html">Shanchuan</a><a href="privacy.html">Privacy</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="../privacy-cn.html">中文</a></div></nav>
+<main>
+<h1>Xiyne Gallery privacy policy (China edition)</h1>
+<p class="sub">Effective date: October 27, 2026</p>
+<p class="note">For Xiyne Gallery as distributed through app stores in China (including Huawei AppGallery), as shown inside the app. The Google Play edition has its <a href='privacy.html'>own policy</a>. This website itself collects no personal data and sets no cookies.</p>
+<div class="panel">
+<p>Last updated: October 27, 2026</p>
+<p>Xiyne Gallery (&quot;the app&quot;) is developed and operated by Kunming Youtan Technology Co., Ltd. (&quot;we&quot;, &quot;us&quot;). This policy explains how the app handles information about you and what rights you have. Please read it carefully before using the app.</p>
+<h2>1. In short</h2>
+<p>Managing, searching and recognising your photos all happens on your phone. We do not collect your photos, videos, searches, face features or photo locations, do not upload them to our servers and do not give them to any third party. The app contains no ads and no third-party analytics, tracking or push tools. The app has no accounts: you never sign up or sign in.</p>
+<h2>2. How each feature uses your information</h2>
+<p class="item">1) Browsing and searching photos (the basic feature): the app reads the photos and videos on your phone, shows them, and computes image features to build a search index, so that you can search with words or with a picture. All of this happens on your phone.</p>
+<p class="item">2) Where photos were taken: the app reads the location recorded in a photo file (never your phone&#x27;s live location) and looks the place name up in an offline table inside the app, to show the place, to search by place and to group photos by place. Only when you tap a photo&#x27;s place and choose a map app to see it in are that photo&#x27;s coordinates handed to the map app you chose.</p>
+<p class="item">3) People recognition (optional, off by default): your separate consent is asked when you turn it on. The app then detects faces in your photos on your phone and computes face features to group photos by person; the names you give people stay on your phone too. Face features are sensitive personal information and never leave your phone. You can turn this off at any time in Settings.</p>
+<p class="item">4) Text recognition (optional, off by default): when on, the app reads text in your images on your phone so that you can search for it.</p>
+<p class="item">5) Private album (optional): photos and videos you move into it are stored encrypted in the app&#x27;s private storage and are shown only after you unlock the album with its password. The password never leaves your phone.</p>
+<p class="item">6) App lock and fingerprint unlock (optional, off by default): your phone&#x27;s system checks your fingerprint, face or screen lock; the app learns only whether the check passed and never sees or stores your fingerprint, face data or screen lock.</p>
+<p class="item">7) Recycle bin: photos and videos you delete are kept in the app&#x27;s private storage for a limited time, then deleted for good.</p>
+<p class="item">8) Crash log: if the app closes unexpectedly, it notes on your phone where the code failed, the app version, your phone model and system version, without any photo or file name. It is never sent by itself; it reaches us only if you choose to attach it when you send feedback by email through your mail app.</p>
+<p class="item">9) Feedback: sent through the mail app on your phone. We receive your email address and what you write, and use them only to reply to you.</p>
+<p class="item">10) Buying membership: when you buy or restore membership, the app connects to our server (youtantech.com) to create the order, confirm the payment and activate the membership. For this it handles the order number, the kind of membership bought, the amount, the times of ordering and paying, the payment status, an installation ID the app makes up at random on your phone (to activate the membership on this phone; it is not a device identifier of the phone), the phone&#x27;s make and model (such as “Xiaomi 23127PN0CC”, so that you can tell your devices apart in the Signed-in devices list), and the anonymous ID of your paying account for this app that the payment provider gives us (the Alipay user ID or the WeChat OpenID; it holds no name, phone number or account name, and is used to restore the membership after you change phones or reinstall). When you choose “Restore with my Alipay account” or “Restore with my WeChat account”, you confirm a sign-in in Alipay or WeChat, and we use its result to obtain the same anonymous ID and find the orders you paid; you can enter the order number instead. We do not collect your phone number, device identifiers (IMEI, MAC address, Android ID and so on) or the list of your apps. Payment is made through the payment provider you choose, which handles your payment account and bank card details directly; we never receive them. One purchase works on up to 3 devices at once; in the member panel, Signed-in devices shows them and lets you sign others out. Once you are a member, the app goes online at most once a day to send the installation ID and order number to the server and check that this phone still uses the purchase; the server keeps only the time of the latest check. If the server cannot be reached, your membership is not affected. Apart from buying and restoring membership, viewing or signing out signed-in devices, and this daily check, the app never connects to the internet.</p>
+<p class="item">11) Face-to-face sending and moving to a new phone (between two phones): the photos, videos and files you choose, or, when moving, the photos and videos, categories and favourites, people&#x27;s names, app settings and private album you choose to move, go directly between the two phones over a Wi-Fi Direct connection or a local hotspot, not through our servers and without using mobile data. The receiving phone scans a QR code shown on the sending phone to connect; the code holds only the network name, password, address and a one-time word for this one connection. Your phone&#x27;s device name is shown to the other phone, so that it can see who is sending. The other phone can read only what you chose for this sending, and nothing more once the sending ends, its page closes or its time runs out. The private album travels as an encrypted backup and is not decrypted on the way. Photos and videos received are saved to the phone&#x27;s gallery, other files to the &quot;Download/Xiyne&quot; folder. The app keeps no record of transfers.</p>
+<h2>3. Permissions the app uses</h2>
+<p>Each permission is asked for only when you use the feature that needs it, with its purpose shown at the same time. You can refuse it, or turn it off at any time in your phone&#x27;s Settings › Apps › Permissions; the feature that needs it then stops working, and nothing else is affected.</p>
+<p class="item">1) Read photos and videos (&quot;Photos and videos&quot; on Android 13 and later, &quot;Storage&quot; before): to show and manage your photos and videos and build the search index.</p>
+<p class="item">2) Read locations in photos (ACCESS_MEDIA_LOCATION): to read where photos were taken, as recorded in them.</p>
+<p class="item">3) Notifications (POST_NOTIFICATIONS): to show the progress while indexing or sending goes on in the background.</p>
+<p class="item">4) Write to storage (Android 9 and earlier only): to save edited photos.</p>
+<p class="item">5) Manage media (optional, Android 12 and later, switched on by you in system settings): so that deleting photos does not ask for the system&#x27;s confirmation each time.</p>
+<p class="item">6) Camera (CAMERA): to scan the QR code on the other phone for face-to-face sending and moving to a new phone. The camera is on only on the scanning page; nothing it sees is saved or uploaded.</p>
+<p class="item">7) Nearby devices (NEARBY_WIFI_DEVICES, Android 13 and later) or location (ACCESS_FINE_LOCATION, Android 12 and earlier): the system requires it of an app that sets up a Wi-Fi Direct connection or a local hotspot between two phones. The app never gets or uses your location.</p>
+<p class="item">8) Network (INTERNET): to buy and restore membership, and to send photos directly between two phones (without connecting to our servers).</p>
+<p class="item">9) Granted by the system without asking you: vibration (a light touch when selecting photos), foreground service (indexing going on in the background, sending going on with its page left or the screen off), keeping the phone awake (sending going on with the screen off), seeing and changing the Wi-Fi and network state (to connect the two phones), biometrics (app lock, fingerprint unlock).</p>
+<h2>4. Third-party SDKs and sharing</h2>
+<p class="item">1) To take payment for membership and to restore purchases the app uses the following services, called only when you choose to pay or restore with them:</p>
+<p>(1) WeChat OpenSDK (with WeChat Pay), provided by Shenzhen Tencent Computer Systems Co., Ltd. and Tenpay Payment Technology Co., Ltd., to pay with WeChat Pay and, when you choose to restore with your WeChat account, to sign in with WeChat; handles the order details, the payment result and the sign-in result (OpenID);</p>
+<p>(2) Alipay SDK, provided by Alipay (China) Network Technology Co., Ltd., to pay with Alipay and, when you choose to restore with your Alipay account, to sign in with Alipay; handles the order details, the payment result and the sign-in result (user ID);</p>
+<p>(3) Huawei In-App Purchases (the version for Huawei AppGallery only), provided by Huawei Software Technologies Co., Ltd., to pay with Huawei In-App Purchases; handles the order details and the payment result.</p>
+<p>How these providers handle your information is set out in their own privacy policies.</p>
+<p class="item">2) The open-source software used in the app (such as its image recognition and image decoding components, and ZXing, which makes and reads QR codes) runs only on your phone and collects and sends nothing; see &quot;Open-source notices&quot;.</p>
+<p class="item">3) Apart from the above and where the law requires it, we do not share, transfer or publicly disclose your personal information.</p>
+<h2>5. Storage and protection</h2>
+<p class="item">1) Photos, the search index, people and text recognition results and the private album are kept only in the app&#x27;s private storage on your phone, which other apps cannot read; the private album&#x27;s contents are stored encrypted.</p>
+<p class="item">2) Membership orders are kept on our servers in the People&#x27;s Republic of China and are not transferred abroad. They are kept for as long as the law requires (at least three years from the completion of the transaction under the E-Commerce Law of the PRC), then deleted or anonymised.</p>
+<p class="item">3) Orders are protected by encrypted transmission (HTTPS), access control and other measures. Should a personal-information security incident occur, we will inform you and report it to the authorities as the law requires.</p>
+<h2>6. Your rights</h2>
+<p class="item">1) Access and deletion: your photos and recognition results are on your phone, where you can see and delete them in the app; clearing the app&#x27;s data or uninstalling the app deletes everything the app keeps on your phone.</p>
+<p class="item">2) Withdrawing consent: you can turn off permissions in your phone&#x27;s settings, or turn off people or text recognition; you can also tap &quot;Withdraw consent&quot; at the bottom of Settings › Privacy policy, after which the app closes and asks for your consent again before it can be used. Withdrawal does not affect processing carried out on the basis of your consent before it.</p>
+<p class="item">3) Closing an account: the app has no accounts, so there is nothing to close. To have your orders deleted from our servers, contact us; orders the law requires us to keep are excepted.</p>
+<p class="item">4) Copies and corrections: to receive or correct the order details we keep, contact us.</p>
+<p>We will answer within 15 working days of receiving your request and confirming your identity.</p>
+<h2>7. Children</h2>
+<p>The app is meant mainly for adults. Children under 14 should use it only with the consent and guidance of a parent or guardian, and need their guardian&#x27;s consent to buy membership. We do not knowingly collect children&#x27;s personal information; should we find that we have handled a child&#x27;s personal information without a guardian&#x27;s consent, we will delete it as soon as possible.</p>
+<h2>8. Changes to this policy</h2>
+<p>This policy may change with the law or with the app. The new version comes with an app update and is shown in the app; for material changes (such as to the purposes, ways or scope of processing) the app tells you, for example in a dialog, and asks for your consent again.</p>
+<h2>9. Contact us</h2>
+<p>For anything about your personal information, you can reach us at:</p>
+<p>Operator: Kunming Youtan Technology Co., Ltd.</p>
+<p>Email: <a href="mailto:privacy@youtantech.com">privacy@youtantech.com</a></p>
+<p>If you are not satisfied with our answer, or believe that our handling has harmed your rights, you can complain to the authorities responsible for cyberspace, industry and information technology, public security or market regulation, or bring a case before a competent people&#x27;s court.</p>
+</div>
+<footer>© 2026 Kunming Youtan Technology Co., Ltd. · <a href="mailto:support@youtantech.com">support@youtantech.com</a> · <a href="terms.html">User agreement</a> · <a href="privacy.html">Privacy</a> · <a href="privacy-cn.html">Privacy (China edition)</a><br>This site collects no personal data and sets no cookies.</footer>
+</main>
+</body>
+</html>
